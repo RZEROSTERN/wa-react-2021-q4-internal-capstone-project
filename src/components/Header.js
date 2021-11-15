@@ -4,19 +4,19 @@ import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
     return (
-        <header class="wz-header">
+        <header className="wz-header">
             <input type="checkbox" id="nav-check"></input>
-            <div class="nav-header">
-                <div class="nav-title">Furnituria</div>
+            <div className="nav-header">
+                <div className="nav-title">Furnituria</div>
             </div>
-            <div class="nav-btn">
-                <label for="nav-check">
+            <div className="nav-btn">
+                <label htmlFor="nav-check">
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
             </div>
-            <div class="nav-links">
+            <div className="nav-links">
                 <a href="/#">
                     <FontAwesomeIcon icon={faSearch} /> Search
                 </a>
