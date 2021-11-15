@@ -2,7 +2,30 @@
     box-sizing: border-box;
 }
 
-.center {
+.wz-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wz-col {
+    display: inline-block;
+    padding: 8px;
+}
+
+.wz-quarters {
+    width: 25%;
+}
+
+.wz-thirds {
+    width: 33%;
+}
+
+.wz-halfs {
+    width: 50%;
+}
+
+.wz-center {
     text-align: center;
 }
 
@@ -52,6 +75,8 @@
 .wz-footer {
     padding: 10px;
     text-align: center;
+    background-color: #4d4d4d;
+    color: #ffffff;
 }
 
 .wz-slider-item-image {
@@ -68,6 +93,10 @@
 .wz-slider-product-item-image {
     width: 100%;
     padding: 16px;
+}
+
+.wz-product img{
+    width: 100%;
 }
 
 @media (max-width: 600px) {
