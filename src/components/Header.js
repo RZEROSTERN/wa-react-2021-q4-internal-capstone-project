@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
     return (
@@ -10,9 +10,7 @@ function Header() {
             </div>
             <div className="nav-btn">
                 <label htmlFor="nav-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <FontAwesomeIcon icon={faBars} />
                 </label>
             </div>
             <div className="nav-links">
