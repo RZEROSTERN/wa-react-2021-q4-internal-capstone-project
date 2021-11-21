@@ -1,8 +1,20 @@
+import ProductsListContainer from '../components/ProductsListContainer';
+import ProductsSidebar from '../components/ProductsSidebar';
+import ProductsTopbarMobile from '../components/ProductsTopbarMobile';
+
 const ProductsList = (props) => {
     return (
-        <div className="wz-container wz-center">
-            <h1>This is the Product List Page</h1>
-        </div>
+        <section id="products-list">
+            <div id="mobile-layout" className="wz-mobile-shown">
+                <ProductsTopbarMobile className="wz-mobile-full" />
+                <ProductsListContainer className="wz-mobile-full" />
+            </div>
+            <div id="desktop-layout" className="wz-mobile-hidden wz-container-fluid">
+                <ProductsSidebar className="wz-col wz-quarters" />
+                <ProductsListContainer className="wz-three-quarters" />
+            </div>
+            
+        </section>
     );
 }
 

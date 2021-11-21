@@ -9,21 +9,33 @@
     margin-bottom: 16px;
 }
 
+.wz-container-fluid {
+    margin-bottom: 16px;
+}
+
 .wz-col {
     display: inline-block;
     padding: 8px;
 }
 
+.wz-three-quarters {
+    width: 75%;
+    display: inline-block;
+}
+
 .wz-quarters {
     width: 25%;
+    display: inline-block;
 }
 
 .wz-thirds {
     width: 33%;
+    display: inline-block;
 }
 
 .wz-halfs {
     width: 50%;
+    display: inline-block;
 }
 
 .wz-center {
@@ -105,6 +117,14 @@
     padding: 10px;
 }
 
+.wz-mobile-shown {
+    display: none;
+}
+
+.categories-sidebar {
+    vertical-align: top;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;
@@ -167,5 +187,13 @@
 
     .wz-mobile-full {
         width: 100%;
+    }
+
+    .wz-mobile-shown {
+        display: block;
+    }
+
+    .wz-mobile-hidden {
+        display: none;
     }
 }
