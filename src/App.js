@@ -13,14 +13,14 @@ function App() {
   let layout;
   
   if(isProductsList) {
-    layout = <ProductsList setIsProductsList={setIsProductsList} />
+    layout = <ProductsList />
   } else {
     layout = <Home setIsProductsList={setIsProductsList} />
   }
 
   return (
     <div className="App">
-      <Header />
+      <Header setIsProductsList={setIsProductsList} />
       {layout}
       <Footer />
     </div>
