@@ -125,6 +125,25 @@
     vertical-align: top;
 }
 
+.wz-sidebar-item {
+    padding: 16px;
+}
+
+.wz-sidebar-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+.wz-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;

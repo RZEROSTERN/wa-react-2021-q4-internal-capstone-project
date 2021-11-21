@@ -8,11 +8,11 @@ import ProductsListContainer from "../components/ProductsListContainer";
 
 const Home = (props) => {    
     const sliderLayoutItems = sliderData.results.map((item) => {
-        return ( <SliderBannerItem item={item} /> );
+        return ( <SliderBannerItem item={item} key={item.id} /> );
     });
 
     const productSliderItems = productCategoriesData.results.map((item) => {
-        return ( <SliderProductItem item={item} /> );
+        return ( <SliderProductItem item={item} key={item.id} /> );
     });
 
     return (
