@@ -6,6 +6,7 @@
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 16px;
 }
 
 .wz-col {
@@ -99,10 +100,17 @@
     width: 100%;
 }
 
+.wz-btn-primary {
+    font-size: 32px;
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;
       position: absolute;
+      text-align: center;
+      color: #ffffff;
       right: 0px;
       top: 0px;
     }

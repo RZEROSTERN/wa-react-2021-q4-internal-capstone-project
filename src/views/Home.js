@@ -4,30 +4,20 @@ import productCategoriesData from '../mocks/en-us/product-categories.json';
 import productsData from '../mocks/en-us/featured-products.json';
 import { sliderBannersSettings, sliderProductsSettings } from '../utils/constants.js';
 import Product from '../components/Product.js';
+import SliderBannerItem from "../components/SliderBannerItem";
+import SliderProductItem from "../components/SliderProductItem";
 
-function Home() {
+const Home = (props) => {    
     const sliderLayoutItems = sliderData.results.map((item) => {
-        return (
-            <div key={item.id}>
-                <img src={item.data.main_image.url} alt={item.data.main_image.alt} className="wz-slider-item-image"/>
-                <h3 className="wz-center">{item.data.title}</h3>
-            </div>
-        )
+        return ( <SliderBannerItem item={item} /> );
     });
 
     const productSliderItems = productCategoriesData.results.map((item) => {
-        return (
-            <div key={item.id}>
-                <img src={item.data.main_image.url} alt={item.data.main_image.alt} className="wz-slider-product-item-image"/>
-                <h3 className="wz-center">{item.data.name}</h3>
-            </div>
-        )
+        return ( <SliderProductItem item={item} /> );
     });
 
     const productsDataItems = productsData.results.map((item) => {
-        return (
-            <Product itemData={item} key={item.id} />
-        );
+        return ( <Product itemData={item} key={item.id} /> );
     });
 
     return (
@@ -43,7 +33,9 @@ function Home() {
             <div className="wz-container" key="products-container">
                 {productsDataItems}
             </div>
-            
+            <div className="wz-container wz-center">
+                <button className="wz-btn-primary" onClick={() => props.setIsProductsList(true)}>View all products</button>
+            </div>
         </section>
     );
 }
