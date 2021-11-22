@@ -144,6 +144,10 @@
     cursor: pointer;
 }
 
+.wz-right {
+    right: 0;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;

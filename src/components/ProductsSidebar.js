@@ -31,7 +31,7 @@ const ProductsSidebar = (props) => {
     });
 
     return (
-        <div className={"categories-sidebar wz-mobile-hidden " + props.className}>
+        <div className={"categories-sidebar " + props.className}>
             <h1>Select a category</h1>
             <div className="wz-container chips-container">{chips}</div>
             {categories}
