@@ -8,11 +8,9 @@ const ProductsSidebar = (props) => {
             props.setProductCategoryFilter(previousItems => [...previousItems, newItem]);
         };
 
-        
-
         return (
             <div className="wz-sidebar-item" key={item.id}>
-                <a href="/#" onClick={() => addItem(item.data.name)}>{item.data.name}</a>
+                <a href="/#" onClick={() => {  addItem(item.data.name) } }>{item.data.name}</a>
             </div>
         )
     });
