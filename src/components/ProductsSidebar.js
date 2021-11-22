@@ -5,7 +5,8 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 const ProductsSidebar = (props) => {
     const categories = productCategoriesData.results.map((item) => {
         const addItem = (newItem) => {
-            props.setProductCategoryFilter(previousItems => [...previousItems, newItem]);
+            if(props.productCategoryFilter.find(element => element === newItem) === undefined)
+                props.setProductCategoryFilter(previousItems => [...previousItems, newItem]);
         };
 
         return (
