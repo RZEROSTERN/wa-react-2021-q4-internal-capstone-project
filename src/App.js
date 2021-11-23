@@ -10,7 +10,7 @@ function App() {
   const { data, isLoading } = useFeaturedBanners();
   const [isProductsList, setIsProductsList] = useState(false);
   console.log(data, isLoading);
-  let layout;
+const layout = isProducList ? <ProductsList /> : <Home setIsProductsList={setIsProductsList} />
   
   if(isProductsList) {
     layout = <ProductsList />
