@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons'
 
-const Header = (props) => {
+const Header = ( { setIsProductsList } ) => {
     return (
         <header className="wz-header">
             <input type="checkbox" id="nav-check"></input>
