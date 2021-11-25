@@ -3,7 +3,7 @@ import Product from '../components/Product.js';
 import Paginator from './Paginator.js';
 
 const ProductsListContainer = (props) => {
-    const paginator = (props.hasPaginator !== undefined) ? <Paginator /> : <span/>;
+    const paginator = (props.hasPaginator) ? <Paginator /> : <span/>;
 
     const productsDataItems = productsData.results.map((item) => {
         let itemToAdd;
