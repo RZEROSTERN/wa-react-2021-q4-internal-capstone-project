@@ -58,6 +58,7 @@
     font-size: 22px;
     color: #fff;
     padding: 10px 10px 10px 10px;
+    cursor: pointer;
 }
 
 .wz-header > .nav-btn {
@@ -145,7 +146,7 @@
 }
 
 .wz-right {
-    right: 0;
+    right: 0;   
 }
 
 @media (max-width: 600px) {

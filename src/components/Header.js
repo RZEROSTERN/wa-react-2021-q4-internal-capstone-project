@@ -6,7 +6,7 @@ const Header = ( { setIsProductsList } ) => {
         <header className="wz-header">
             <input type="checkbox" id="nav-check"></input>
             <div className="nav-header">
-                <div className="nav-title" onClick={() => props.setIsProductsList(false)}>Furnituria</div>
+                <div className="nav-title" onClick={() => setIsProductsList(false)}>Furnituria</div>
             </div>
             <div className="nav-btn">
                 <label htmlFor="nav-check">

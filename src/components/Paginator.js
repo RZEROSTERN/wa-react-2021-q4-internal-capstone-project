@@ -1,4 +1,4 @@
-function Paginator() {
+const Paginator = () => {
     return (
         <div className="pagination wz-right">
             <ul className="pagination-2">
