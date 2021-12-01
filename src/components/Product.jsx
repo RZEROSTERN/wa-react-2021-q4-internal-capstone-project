@@ -12,7 +12,7 @@ const Product = (props) => {
                     <Link to="/">Add to cart</Link>
                 </div>
                 <div className="wz-halfs wz-center">
-                    <Link to="/products">Product details</Link>
+                    <Link to={"/product/" + props.itemData.id}>Product details</Link>
                 </div>
             </div>
         </div>
