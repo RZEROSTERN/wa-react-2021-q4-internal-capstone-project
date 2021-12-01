@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router";
 import Home from "../../views/Home";
-import ProductsList from "../../views/ProductsList";
+import ProductsList from "../../views/ProductsList.jsx";
 
 const RouterSwitch = () => {
     return (

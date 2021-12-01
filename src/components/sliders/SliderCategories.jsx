@@ -1,7 +1,7 @@
 import Slider from "react-slick"
 import { sliderProductsSettings } from "../../utils/constants"
 import { useCategories } from "../../utils/hooks/useCategories"
-import SliderProductItem from "../SliderProductItem"
+import SliderProductItem from "../SliderProductItem.jsx"
 
 const SliderCategories = () => {
     const { data, isLoading } = useCategories()

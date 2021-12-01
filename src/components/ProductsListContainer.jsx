@@ -1,6 +1,6 @@
-import Product from '../components/Product.js';
-import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts.js';
-import Paginator from './Paginator.js';
+import Product from './Product.jsx';
+import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts.jsx';
+import Paginator from './Paginator.jsx';
 
 const ProductsListContainer = (props) => {
     const { data, isLoading } = useFeaturedProducts();

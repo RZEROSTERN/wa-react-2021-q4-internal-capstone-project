@@ -1,7 +1,7 @@
 import Slider from "react-slick";
-import { useFeaturedBanners } from "../../utils/hooks/useFeaturedBanners";
+import { useFeaturedBanners } from "../../utils/hooks/useFeaturedBanners.jsx";
 import { sliderBannersSettings } from '../../utils/constants.js';
-import SliderBannerItem from "../SliderBannerItem";
+import SliderBannerItem from "../SliderBannerItem.jsx";
 
 const SliderBanners = () => {
     const { data, isLoading } = useFeaturedBanners();
