@@ -6,7 +6,7 @@ const ProductsListContainer = (props) => {
     const { data, isLoading } = useFeaturedProducts();
     console.log(data, isLoading);
 
-    const paginator = (props.hasPaginator) ? <Paginator /> : <span/>;
+    const paginator = (props.hasPaginator && !isLoading) ? <Paginator totalPages={data.total_pages} currentPage={data.page} /> : <span/>;
     const productsDataItems =  (!isLoading) ? data.results.map((item) => {
         let itemToAdd;
 
