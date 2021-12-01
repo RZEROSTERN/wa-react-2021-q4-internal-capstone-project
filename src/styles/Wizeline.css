@@ -158,6 +158,26 @@
     padding: 10px;
 }
 
+dl {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0
+  }
+  dt {
+    float: left;
+    font-weight: bold;
+    width: 25%;
+    padding: 0;
+    margin: 0
+  }
+  dd {
+    float: left;
+    width: 75%;
+    padding: 0;
+    margin: 0
+  }
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;
