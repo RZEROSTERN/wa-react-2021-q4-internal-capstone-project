@@ -8,6 +8,9 @@ const RouterSwitch = () => {
           <Route path="/products">
             <ProductsList />
           </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

@@ -1,29 +1,18 @@
-import Slider from "react-slick";
-import sliderData from '../mocks/en-us/featured-banners.json';
-import productCategoriesData from '../mocks/en-us/product-categories.json';
-import { sliderBannersSettings, sliderProductsSettings } from '../utils/constants.js';
-import SliderBannerItem from "../components/SliderBannerItem";
-import SliderProductItem from "../components/SliderProductItem";
 import ProductsListContainer from "../components/ProductsListContainer";
 import {Link} from 'react-router-dom';
+import SliderBanners from "../components/sliders/SliderBanners";
+import { useCategories } from "../utils/hooks/useCategories";
+import SliderCategories from "../components/sliders/SliderCategories";
 
-const Home = (props) => {    
-    const sliderLayoutItems = sliderData.results.map((item) => {
-        return ( <SliderBannerItem item={item} key={item.id} /> );
-    });
+const Home = (props) => {
 
-    const productSliderItems = productCategoriesData.results.map((item) => {
-        return ( <SliderProductItem item={item} key={item.id} /> );
-    });
+    const { data, isLoading } = useCategories();
+    console.log(data, isLoading);
 
     return (
         <section className="wz-home">
-            <Slider {...sliderBannersSettings}>
-                {sliderLayoutItems}
-            </Slider>
-            <Slider {...sliderProductsSettings}>
-                {productSliderItems}
-            </Slider>
+            <SliderBanners />
+            <SliderCategories />
             <h2 className="wz-title">Featured products</h2>
             <ProductsListContainer />
             <div className="wz-container wz-center">
@@ -31,6 +20,7 @@ const Home = (props) => {
             </div>
         </section>
     );
+    
 }
 
 export default Home;

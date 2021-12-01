@@ -154,6 +154,10 @@
     right: 0;   
 }
 
+.wz-purchase-options {
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;
