@@ -1,12 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
-const Header = ( { setIsProductsList } ) => {
+const Header = () => {
     return (
         <header className="wz-header">
             <input type="checkbox" id="nav-check"></input>
             <div className="nav-header">
-                <div className="nav-title" onClick={() => setIsProductsList(false)}>Furnituria</div>
+                <div className="nav-title">
+                    <Link to="/">Furnituria</Link>
+                </div>
             </div>
             <div className="nav-btn">
                 <label htmlFor="nav-check">

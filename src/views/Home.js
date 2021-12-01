@@ -5,6 +5,7 @@ import { sliderBannersSettings, sliderProductsSettings } from '../utils/constant
 import SliderBannerItem from "../components/SliderBannerItem";
 import SliderProductItem from "../components/SliderProductItem";
 import ProductsListContainer from "../components/ProductsListContainer";
+import {Link} from 'react-router-dom';
 
 const Home = (props) => {    
     const sliderLayoutItems = sliderData.results.map((item) => {
@@ -26,7 +27,7 @@ const Home = (props) => {
             <h2 className="wz-title">Featured products</h2>
             <ProductsListContainer />
             <div className="wz-container wz-center">
-                <button className="wz-btn-primary" onClick={() => props.setIsProductsList(true)}>View all products</button>
+                <Link to="/products">View all products</Link>
             </div>
         </section>
     );

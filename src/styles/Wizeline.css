@@ -61,6 +61,11 @@
     cursor: pointer;
 }
 
+.wz-header > .nav-header > .nav-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .wz-header > .nav-btn {
     display: none;
 }

@@ -1,20 +1,22 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
-import Home from './views/Home.js';
-import ProductsList from './views/ProductsList';
+import RouterSwitch from './components/router/RouterSwitch';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
-  const [isProductsList, setIsProductsList] = useState(false);
+  // const [isProductsList, setIsProductsList] = useState(false);
   
-  const layout = isProductsList ? <ProductsList /> : <Home setIsProductsList={setIsProductsList} />
+  // const layout = isProductsList ? <ProductsList /> : <Home setIsProductsList={setIsProductsList} />
 
   return (
     <div className="App">
-      <Header setIsProductsList={setIsProductsList} />
-      {layout}
-      <Footer />
+      <Router>
+        <Header />
+          <RouterSwitch />
+        <Footer />
+      </Router>
     </div>
   );
 }
