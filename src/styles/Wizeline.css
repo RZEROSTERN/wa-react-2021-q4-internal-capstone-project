@@ -163,20 +163,20 @@ dl {
     overflow: hidden;
     padding: 0;
     margin: 0
-  }
-  dt {
+}
+dt {
     float: left;
     font-weight: bold;
     width: 25%;
     padding: 0;
     margin: 0
-  }
-  dd {
+}
+dd {
     float: left;
     width: 75%;
     padding: 0;
     margin: 0
-  }
+}
 
 .search-form {
     float: left;
