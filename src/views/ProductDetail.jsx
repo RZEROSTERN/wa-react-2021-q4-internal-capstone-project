@@ -5,7 +5,7 @@ import { useDetailedProduct } from '../utils/hooks/useDetailedProduct';
 const ProductDetail = () => {
     const {id} = useParams()
     const {data, isLoading} = useDetailedProduct(id)
-    console.log(data, isLoading)
+
     const product = (!isLoading) ? data.results[0] : null
 
     const tags = (!isLoading) ? product.tags.map((item) => {

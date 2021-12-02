@@ -178,6 +178,11 @@ dl {
     margin: 0
   }
 
+.search-form {
+    float: left;
+    vertical-align: middle;
+}
+
 @media (max-width: 600px) {
     .wz-header > .nav-btn {
       display: inline-block;
