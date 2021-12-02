@@ -254,4 +254,9 @@ dl {
     .wz-mobile-hidden {
         display: none;
     }
+
+    .search-form {
+        width: 100%;
+        padding: 20px;
+    }
 }

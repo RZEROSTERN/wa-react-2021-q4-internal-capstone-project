@@ -10,7 +10,7 @@ const SearchResults = () => {
     const paginator = (!isLoading) ? <Paginator totalPages={data.total_pages} currentPage={data.page} /> : <span/>;
     console.log(data, isLoading)
 
-    return (!isLoading) ? (
+    return (!isLoading && data.total_results_size > 0) ? (
         <div className="wz-container">
             <h1>Search results for {searchTerm}</h1>
             {paginator}
@@ -18,7 +18,9 @@ const SearchResults = () => {
             {paginator}
         </div>
     ) : (
-        <div className="wz-container"></div>
+        <div className="wz-container">
+            <h1>No se han encontrado resultados.</h1>
+        </div>
     )
 }
 

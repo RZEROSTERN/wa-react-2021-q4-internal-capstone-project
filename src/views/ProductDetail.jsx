@@ -19,10 +19,10 @@ const ProductDetail = () => {
     return (product !== null) ? (
         <div className="wz-container">
             <h1>{product.data.name}</h1>
-            <div className="wz-halfs">
+            <div className="wz-mobile-full wz-halfs">
                 <SliderProductDetailsImages images={product.data.images}/>
             </div>
-            <div className="wz-halfs">
+            <div className="wz-halfs wz-mobile-full">
                 <h3>SKU {product.data.sku}</h3>
                 <div className="chips-container">
                     {tags}
