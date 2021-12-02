@@ -224,9 +224,13 @@ dl {
       z-index: 100;
     }
 
-    .wz-header > .nav-links > a {
+    .wz-header > .nav-links > a, .wz-header > .nav-links > .search-form {
       display: block;
       width: 100%;
+    }
+
+    .search-form {
+        padding: 20px;
     }
 
     .wz-header > #nav-check:not(:checked) ~ .nav-links {
@@ -253,10 +257,5 @@ dl {
 
     .wz-mobile-hidden {
         display: none;
-    }
-
-    .search-form {
-        width: 100%;
-        padding: 20px;
     }
 }
