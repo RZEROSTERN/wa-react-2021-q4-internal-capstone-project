@@ -7,7 +7,7 @@ import SearchResults from "../../views/SearchResults";
 const RouterSwitch = () => {
     return (
         <Switch>
-          <Route path="/search/:searchTerm">
+          <Route path="/search/:searchTerm" component={SearchResults} />
             <SearchResults />
           </Route>
           <Route path="/product/:id">
