@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLatestAPI } from "./useLatestAPI";
 import { API_BASE_URL } from '../constants';
 
-export function useFeaturedProducts() {
+export function useFeaturedProducts(page) {
     const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
     const [featuredProducts, setFeaturedProducts] = useState(() => ({
         data: {},
@@ -23,7 +23,7 @@ export function useFeaturedProducts() {
                 const response = await fetch(
                     `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
                       '[[at(document.type, "product")]]'
-                    )}&lang=en-us&pageSize=12`,
+                    )}&lang=en-us&pageSize=12&page=${page}`,
                     {
                       signal: controller.signal,
                     }
@@ -42,7 +42,7 @@ export function useFeaturedProducts() {
         return () => {
             controller.abort();
         }
-    }, [apiRef, isApiMetadataLoading]);
+    }, [apiRef, isApiMetadataLoading, page]);
 
     return featuredProducts;
 }
