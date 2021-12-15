@@ -1,11 +1,11 @@
-import productsData from '../mocks/en-us/featured-products.json';
-import Product from '../components/Product.js';
-import Paginator from './Paginator.js';
+import Product from './Product.jsx';
+import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts.jsx';
+import Paginator from './Paginator.jsx';
 
 const ProductsListContainer = (props) => {
-    const paginator = (props.hasPaginator) ? <Paginator /> : <span/>;
-
-    const productsDataItems = productsData.results.map((item) => {
+    const { data, isLoading } = useFeaturedProducts();
+    const paginator = (props.hasPaginator && !isLoading) ? <Paginator totalPages={data.total_pages} currentPage={data.page} /> : <span/>;
+    const productsDataItems =  (!isLoading) ? data.results.map((item) => {
         let itemToAdd;
 
         if(props.productCategoryFilter === undefined) {
@@ -23,7 +23,7 @@ const ProductsListContainer = (props) => {
         }
 
         return itemToAdd;
-    });
+    }) : [];
 
     return (
         <div className={"wz-container " + props.className}>
@@ -32,7 +32,7 @@ const ProductsListContainer = (props) => {
             </div>
             {paginator}
         </div>
-    )
+    );
     
     
 }
