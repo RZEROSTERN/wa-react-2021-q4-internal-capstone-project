@@ -8,20 +8,10 @@ const RouterSwitch = () => {
     return (
         <Switch>
           <Route path="/search/:searchTerm" component={SearchResults} />
-            <SearchResults />
-          </Route>
-          <Route path="/product/:id">
-            <ProductDetail />
-          </Route>
-          <Route path="/products">
-            <ProductsList />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/product/:id" component={ProductDetail} />
+          <Route path="/products" component={ProductsList} />
+          <Route path="/home" component={Home} />
+          <Route path="/" component={Home} />
         </Switch>
     );
 };
