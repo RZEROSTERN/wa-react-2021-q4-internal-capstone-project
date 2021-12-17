@@ -181,6 +181,12 @@ dd {
 .search-form {
     float: left;
     vertical-align: middle;
+    padding: 10px;
+}
+
+.search-form input[type="text"] {
+    font-size: 18px;
+    margin-right: 16px;
 }
 
 @media (max-width: 600px) {

@@ -1,9 +1,12 @@
 import Product from './Product.jsx';
 import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts.jsx';
 import Paginator from './Paginator.jsx';
+import { useParams } from 'react-router-dom';
 
 const ProductsListContainer = (props) => {
-    const { data, isLoading } = useFeaturedProducts();
+    const { page } = useParams()
+    console.log(page)
+    const { data, isLoading } = useFeaturedProducts((page) ? page : 1);
     const paginator = (props.hasPaginator && !isLoading) ? <Paginator totalPages={data.total_pages} currentPage={data.page} /> : <span/>;
     const productsDataItems =  (!isLoading) ? data.results.map((item) => {
         let itemToAdd;

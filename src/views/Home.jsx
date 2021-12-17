@@ -4,7 +4,7 @@ import SliderBanners from "../components/sliders/SliderBanners";
 import { useCategories } from "../utils/hooks/useCategories";
 import SliderCategories from "../components/sliders/SliderCategories";
 
-const Home = (props) => {
+const Home = () => {
 
     const { data, isLoading } = useCategories();
     console.log(data, isLoading);

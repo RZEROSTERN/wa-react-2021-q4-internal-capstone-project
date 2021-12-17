@@ -22,7 +22,6 @@ const Header = () => {
             <div className="nav-links">
                 <form className="search-form" onSubmit={handleSubmit}>
                     <input type="text" name="searchTerm" onChange={handleChange} />
-                    <button type="submit">Search</button>
                 </form>
                 <a href="/#">
                     <FontAwesomeIcon icon={faSearch}/> Search

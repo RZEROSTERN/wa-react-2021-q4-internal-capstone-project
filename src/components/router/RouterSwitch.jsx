@@ -9,6 +9,7 @@ const RouterSwitch = () => {
         <Switch>
           <Route path="/search/:searchTerm" component={SearchResults} />
           <Route path="/product/:id" component={ProductDetail} />
+          <Route path="/products/:page" component={ProductsList} />
           <Route path="/products" component={ProductsList} />
           <Route path="/home" component={Home} />
           <Route path="/" component={Home} />

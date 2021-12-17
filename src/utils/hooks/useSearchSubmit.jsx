@@ -8,7 +8,6 @@ const useSearchSubmit = () => {
     const handleChange = (event) => {
         const {name, value} = event.target
         setFormData({...formData, [name]: value})
-        console.log(formData)
     }
 
     const handleSubmit = (event) => {
