@@ -26,9 +26,9 @@ const Header = () => {
                 <a href="/#">
                     <FontAwesomeIcon icon={faSearch}/> Search
                 </a>
-                <a href="/#">
+                <Link to="/cart">
                     <FontAwesomeIcon icon={faShoppingCart} /> Cart
-                </a>
+                </Link>
             </div>
         </header>
     );

@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router";
+import Cart from "../../views/Cart";
 import Home from "../../views/Home";
 import ProductDetail from "../../views/ProductDetail";
 import ProductsList from "../../views/ProductsList.jsx";
@@ -12,6 +13,7 @@ const RouterSwitch = () => {
           <Route path="/products/:page" component={ProductsList} />
           <Route path="/products" component={ProductsList} />
           <Route path="/home" component={Home} />
+          <Route path="/cart" component={Cart} />
           <Route path="/" component={Home} />
         </Switch>
     );
