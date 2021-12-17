@@ -1,21 +1,28 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
+import { cartReducer } from '../reducers/cartReducer';
 
-const useAddToCartSubmit = () => {
-    const [formData, setFormData] = useState()
+const useAddToCartSubmit = (itemsInput, id) => {
+    const [cartContents, setCartContents] = useState()
+    const [state, dispatch] = useReducer(cartReducer);
 
     const handleChange = (event) => {
-        const {name, value} = event.target
-        setFormData({...formData, [name]: value})
+        const {value} = event.target
+        setCartContents({...cartContents, [id]: {items: value.trim()}})
+    }
+
+    const handleClick = () => {
+        var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+        nativeInputValueSetter.call(itemsInput.current, ` ${itemsInput.current.value}`);
+        
+        var event = new Event('input', { bubbles: true });
+        itemsInput.current.dispatchEvent(event);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
-        if(formData)
-            console.log(formData)
     }
 
-    return {handleChange, handleSubmit}
+    return {handleChange, handleSubmit, handleClick}
 }
 
 export default useAddToCartSubmit

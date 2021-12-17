@@ -2,12 +2,13 @@ import { useParams } from 'react-router-dom';
 import SliderProductDetailsImages from '../components/sliders/SliderProductDetailsImages';
 import { useDetailedProduct } from '../utils/hooks/useDetailedProduct';
 import useAddToCartSubmit from '../utils/hooks/useAddToCartSubmit';
-import { useState } from 'react';
+import { createRef, useState } from 'react';
 
 const ProductDetail = () => {
     const {id} = useParams()
     const {data, isLoading} = useDetailedProduct(id)
-    const {handleChange, handleSubmit} = useAddToCartSubmit()
+    let itemsInput = createRef()
+    const {handleSubmit, handleClick, handleChange} = useAddToCartSubmit(itemsInput, id)
     const [items, setItems] = useState(0)
 
     const product = (!isLoading) ? data.results[0] : null
@@ -21,14 +22,18 @@ const ProductDetail = () => {
     }) : []
 
     const addItem = () => {
-        if(items + 1 <= product.data.stock)
+        if(items + 1 <= product.data.stock) {
             setItems(items + 1)
+        }
+
+        handleClick()
     }
 
     const removeItem = () => {
         if(items > 0) {
             setItems(items - 1)
         }
+        handleClick()
     }
 
     return (product !== null) ? (
@@ -52,7 +57,11 @@ const ProductDetail = () => {
                 <h4>How many you want? (Max {product.data.stock})</h4>
                 <form onSubmit={handleSubmit}>
                     <button type="button" onClick={removeItem}>-</button>
-                    <input type="text" name="items-to-buy" value={items} onChange={handleChange}/>
+                    <input readOnly type="text" 
+                        name="items-to-buy" 
+                        value={items} 
+                        onChange={handleChange} 
+                        ref={itemsInput}/>
                     <button type="button" onClick={addItem}>+</button>
                     <button type="submit">Add to cart</button>
                 </form>
