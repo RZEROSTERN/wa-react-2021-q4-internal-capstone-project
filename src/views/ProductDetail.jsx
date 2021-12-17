@@ -1,10 +1,14 @@
 import { useParams } from 'react-router-dom';
 import SliderProductDetailsImages from '../components/sliders/SliderProductDetailsImages';
 import { useDetailedProduct } from '../utils/hooks/useDetailedProduct';
+import useAddToCartSubmit from '../utils/hooks/useAddToCartSubmit';
+import { useState } from 'react';
 
 const ProductDetail = () => {
     const {id} = useParams()
     const {data, isLoading} = useDetailedProduct(id)
+    const {handleChange, handleSubmit} = useAddToCartSubmit()
+    const [items, setItems] = useState(0)
 
     const product = (!isLoading) ? data.results[0] : null
 
@@ -15,6 +19,17 @@ const ProductDetail = () => {
     const specs = (!isLoading) ? product.data.specs.map((item) => {
         return (<div key={"item-" + item.spec_name}><dt>{item.spec_name}</dt><dd>{item.spec_value}</dd></div>)
     }) : []
+
+    const addItem = () => {
+        if(items + 1 <= product.data.stock)
+            setItems(items + 1)
+    }
+
+    const removeItem = () => {
+        if(items > 0) {
+            setItems(items - 1)
+        }
+    }
 
     return (product !== null) ? (
         <div className="wz-container">
@@ -34,10 +49,12 @@ const ProductDetail = () => {
                 <h2>$ {product.data.price}</h2>
                 <h4>Category: {product.data.category.slug}</h4>
 
-                <h4>How many you want?</h4>
-                <form>
-                    <input type="text" name="items-to-buy" />
-                    <button type="button">Add to cart</button>
+                <h4>How many you want? (Max {product.data.stock})</h4>
+                <form onSubmit={handleSubmit}>
+                    <button type="button" onClick={removeItem}>-</button>
+                    <input type="text" name="items-to-buy" value={items} onChange={handleChange}/>
+                    <button type="button" onClick={addItem}>+</button>
+                    <button type="submit">Add to cart</button>
                 </form>
             </div>
         </div>

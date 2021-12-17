@@ -9,7 +9,7 @@ const Product = (props) => {
             <p className="wz-center">$ {props.itemData.data.price}</p>
             <div className="wz-purchase-options">
                 <div className="wz-halfs wz-center">
-                    <Link to="/">Add to cart</Link>
+                    <Link to="/cart">Add to cart</Link>
                 </div>
                 <div className="wz-halfs wz-center">
                     <Link to={"/product/" + props.itemData.id}>Product details</Link>
